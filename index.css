@@ -1,0 +1,463 @@
+/* styles.css */
+
+*{
+    font-family: 'Nunito Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+
+    transition: all 0.2s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, #103c39  0%, #031A18 20%, #031A18 80%, #103c39 100%);
+    scrollbar-width: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background: #9c9c9cab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    box-shadow: 0px 2px #031A18;
+
+    gap: 25px;
+}
+
+nav:hover{
+    background: #ffffff;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    min-width: 200px;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+}
+
+nav a:hover {
+    transition: all .2s ease-in-out;
+    color: #33d8c5;
+}
+
+/*Grid für persönliche Informationen*/
+
+.personalInfo{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    max-width: 80%;
+    margin: 120px auto;
+    padding: 10px;
+    background: transparent;
+    border-radius: 10px;
+    scroll-margin-top: 150px;
+}
+
+.myPicture, .myContact, .mySkills, .myDeclaration, .myTimeline{
+    background: #ffffff;
+    padding: 0 20px 20px 20px;
+}
+
+.myPicture:hover, .myContact:hover, .mySkills:hover, .myDeclaration:hover, .myTimeline:hover{
+    background: #CAEBE7;
+}
+
+.myPicture {
+    grid-column: 1; /* Erste Spalte */
+    grid-row: 1; /* Erste Zeile */
+
+    border-radius: 10px 0 0 0;
+}
+
+.myContact {
+    grid-column: 1; /* Erste Spalte */
+    grid-row: 2; /* Zweite Zeile */
+}
+
+.mySkills {
+    grid-column: 1; /* Erste Spalte */
+    grid-row: 3; /* Dritte Zeile */
+}
+
+.myTimeline {
+    grid-column: 2; /* Zweite Spalte */
+    grid-row: 1 / span 3; /* Überspannt alle drei Zeilen links */
+
+    border-radius: 0 10px 0 0;
+}
+
+.myDeclaration {
+    grid-column: 1 / span 2; /* Über beide Spalten */
+    grid-row: 4; /* Unter allen Blöcken */
+
+    border-radius: 0 0 10px 10px;
+}
+
+.mySkills h2, .myContact h2, .myDeclaration h2, .myPicture h2, .myTimeline h2{
+    padding: 20px 40px;
+}
+
+.mySkills p, .myDeclaration p, .myContact p{
+    padding: 0 60px;
+}
+
+
+/* neuer themen container mit grid*/
+
+.themeContainer{
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    max-width: 80%;
+    margin: 120px auto;
+    padding: 10px;
+    background: transparent; /*#d2d2d2ab*/
+    border-radius: 10px;
+    scroll-margin-top: 150px;
+}
+
+.themeContainer > :nth-child(){
+    grid-column: 1;
+    grid-row: n;
+
+    background: white;
+    border-radius: 0 0 10px 10px;
+}
+
+/* .themeContainer > :nth-last-child(){
+    border-radius: 0 0 10px 10px;
+} */
+
+.themeHeader {
+    background: white;
+}
+
+.themeHeading {
+    font-size: 30px;
+    margin: 0;
+    padding: 30px 0 0 30px;
+}
+
+.themeProject1{
+    background: white;
+}
+
+.themeProject1:hover{
+    margin-left: 50px;
+    margin-right: -50px;
+}
+
+.themeProject1 section:hover{
+    background: #CAEBE7;
+}
+
+.themeHeader {
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 10px 10px 0 0;
+}
+
+.themeProject1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    background: transparent;
+}
+
+.themeProject1 section {
+    display: none;
+}
+
+.themeProject1.show {
+    gap: 10px;
+    margin-left: 50px;
+    margin-right: -50px;
+}
+
+.themeProject1.show section {
+    display: block;
+    background: #CAEBE7;
+}
+
+.themeProject1 h3, .themeProject1 h3, .themeProject2 h3, .themeProject3 h3{
+    padding: 0 40px;
+}
+
+.themeHeader p, .themeProject1 p, .themeProject2 p, .themeProject3 p{
+    padding: 0 60px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* project grid layout */
+
+.themeProject1 .projectTitle {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+
+    display: block;
+    cursor: pointer;
+}
+
+.projectDescr {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.projectMedia {
+    grid-column: 2;
+    grid-row: 2;
+
+    padding: 10px;
+}
+
+.projectTitle, .projectDescr, .projectMedia {
+    background: white;
+}
+
+/* example images holder */
+
+.imageHolder {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .exampleImage {
+    width: 100%; 
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+
+/*old project container*/
+
+.skillHolder{
+    margin: 100px auto 200px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to right,#ffffffca 0%, #ffffffca 20%, transparent 85%);
+    width: 80%;
+    scroll-margin-top: 150px;
+}
+
+.exampleHolder{
+
+    background: #9c9c9cab;
+    border-left: 5px dashed black;
+    
+    border-radius: 0 10px 10px 0;
+    
+    transition: all .2s ease-in-out;
+}
+
+.exampleHolder:hover{
+    background: #33d8c572;
+    border-left: 5px dashed #33d8c5;
+}
+
+h2{
+    padding: 1em;
+    user-select: none;
+}
+
+.hideContent{
+    display: none;
+}
+
+.hideContent.open{
+    margin: 10px 0;
+    padding: 10px 0 50px 0;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.descrHolder{
+    width: 30%;
+    padding: 0 20px;
+
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.descrHolder p{
+    text-align: justify;
+    hyphens: auto;
+    margin-top: 0;
+}
+
+.mediaHolder{
+    width: 60%;
+    padding: 0 20px 0 20px;
+
+    border-radius: 0 1em 1em 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 80%;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    z-index: 6;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 3px;
+    height: 20px;
+    background: #33d8c5;
+    z-index: 7;
+}
+
+.timeline-item:first-child:before {
+    top: 0px;
+}
+
+/*
+.timeline-item:last-child:before {
+    height: calc(100% - 20px);
+}
+*/
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, #33d8c5 5%, #33d8c5 95%, transparent 100%);
+    z-index: 3;
+}
+
+.timeline-item:after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    width: 12px;
+    height: 12px;
+    background: #33d8c5;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* sonstiges */
+
+hr {
+    border: 3px solid #33d8c5;
+    border-radius: 10%;
+    width: 50%;
+}
+
+table {
+    padding: 0 60px;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    vertical-align: top;
+    width: 30%;
+    color: #33d8c5;
+}
+
+.content {
+    hyphens: auto;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    aspect-ratio: 16 / 9;
+    min-height: 650px;
+}
+
+/* Styling für das Modal */
+.modal {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: fixed; /* Überlagert die Seite */
+    z-index: 1000; /* Über allen anderen Elementen */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Das Bild im Modal */
+  .modalContent {
+    max-height: 90%;
+    width: auto;
+    margin: auto;
+    display: block;
+    border: 3px solid #33d8c5;
+  }
+  
+  /* Schließen-Button */
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
