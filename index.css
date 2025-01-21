@@ -200,7 +200,6 @@ nav a:hover {
 
 .themeHeader p, .themeProject1 p, .themeProject2 p, .themeProject3 p{
     padding: 0 60px;
-    text-align: justify;
     hyphens: auto;
 }
 
@@ -236,14 +235,22 @@ nav a:hover {
     display: grid; 
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    justify-items: center;
   }
   
-  .exampleImage {
-    width: 100%; 
+.exampleImage {
+    width: auto; 
     height: auto;
+    max-height: 500px;
+    max-width: 500px;
     display: block;
     cursor: pointer;
-  }
+    border: 2px solid transparent;
+}
+
+.exampleImage:hover{
+    border: 2px solid #031A18;
+}
 
 /*old project container*/
 
