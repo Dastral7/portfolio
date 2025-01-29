@@ -116,6 +116,14 @@ nav a:hover {
     padding: 0 60px;
 }
 
+.myPicture img {
+    max-width: 60%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
 
 /* neuer themen container mit grid*/
 
